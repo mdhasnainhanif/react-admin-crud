@@ -221,22 +221,22 @@ const Header = () => {
               <li
                 
               >
-                <a>
+                <Link to={"/"}>
                   <i className="la la-home" />
                   <span className="menu-title" >
                     Dashboard
                   </span>
-                </a>
+                </Link>
               </li>
               <li
                 
               >
-                <a>
+                <Link to={"/userprofile"}>
                   <i className="la la-user" />
                   <span className="menu-title" >
                     Profile
                   </span>
-                </a>
+                </Link>
               </li>
             </ul>
           </Scrollbars>
