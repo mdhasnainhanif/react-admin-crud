@@ -130,13 +130,13 @@ const Header = () => {
                 </Link>
               </li>
               <li className="nav-item d-md-none">
-                <a
+                <Link
                   className="nav-link open-navbar-container"
                   data-toggle="collapse"
                   data-target="#navbar-mobile"
                 >
                   <i className="la la-ellipsis-v" />
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

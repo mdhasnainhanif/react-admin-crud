@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Footer from "../../layout/Footer";
 import Header from "../../layout/Header";
 
@@ -17,13 +18,13 @@ const BasicForm = () => {
                 <div className="breadcrumb-wrapper col-12">
                   <ol className="breadcrumb">
                     <li className="breadcrumb-item">
-                      <a href="index.html">Home</a>
+                      <Link to="index.html">Home</Link>
                     </li>
                     <li className="breadcrumb-item">
-                      <a href="#">Form Layouts</a>
+                      <Link to="#">Form Layouts</Link>
                     </li>
                     <li className="breadcrumb-item active">
-                      <a href="#">Basic Forms</a>
+                      <Link to="#">Basic Forms</Link>
                     </li>
                   </ol>
                 </div>
@@ -45,19 +46,19 @@ const BasicForm = () => {
                   className="dropdown-menu"
                   aria-labelledby="dropdownBreadcrumbButton"
                 >
-                  <a className="dropdown-item" href="#">
+                  <Link className="dropdown-item" to="#">
                     <i className="la la-calendar-check-o" /> Calender
-                  </a>
-                  <a className="dropdown-item" href="#">
+                  </Link>
+                  <Link className="dropdown-item" to="#">
                     <i className="la la-cart-plus" /> Cart
-                  </a>
-                  <a className="dropdown-item" href="#">
+                  </Link>
+                  <Link className="dropdown-item" to="#">
                     <i className="la la-life-ring" /> Support
-                  </a>
+                  </Link>
                   <div className="dropdown-divider" />
-                  <a className="dropdown-item" href="#">
+                  <Link className="dropdown-item" to="#">
                     <i className="la la-cog" /> Settings
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -72,30 +73,30 @@ const BasicForm = () => {
                       <h4 className="card-title" id="basic-layout-form">
                         Project Info
                       </h4>
-                      <a className="heading-elements-toggle">
+                      <Link className="heading-elements-toggle">
                         <i className="la la-ellipsis-v font-medium-3" />
-                      </a>
+                      </Link>
                       <div className="heading-elements">
                         <ul className="list-inline mb-0">
                           <li>
-                            <a data-action="collapse">
+                            <Link data-action="collapse">
                               <i className="ft-minus" />
-                            </a>
+                            </Link>
                           </li>
                           <li>
-                            <a data-action="reload">
+                            <Link data-action="reload">
                               <i className="ft-rotate-cw" />
-                            </a>
+                            </Link>
                           </li>
                           <li>
-                            <a data-action="expand">
+                            <Link data-action="expand">
                               <i className="ft-maximize" />
-                            </a>
+                            </Link>
                           </li>
                           <li>
-                            <a data-action="close">
+                            <Link data-action="close">
                               <i className="ft-x" />
-                            </a>
+                            </Link>
                           </li>
                         </ul>
                       </div>

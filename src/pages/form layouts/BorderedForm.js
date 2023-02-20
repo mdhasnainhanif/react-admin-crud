@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Footer from '../../layout/Footer'
 import Header from '../../layout/Header'
 
@@ -15,11 +16,11 @@ const BorderedForm = () => {
                             <div className="row breadcrumbs-top d-inline-block">
                                 <div className="breadcrumb-wrapper col-12">
                                     <ol className="breadcrumb">
-                                        <li className="breadcrumb-item"><a href="index.html">Home</a>
+                                        <li className="breadcrumb-item"><Link to="index.html">Home</Link>
                                         </li>
-                                        <li className="breadcrumb-item"><a href="#">Form Layouts</a>
+                                        <li className="breadcrumb-item"><Link to="#">Form Layouts</Link>
                                         </li>
-                                        <li className="breadcrumb-item active"><a href="#">Bordered Forms</a>
+                                        <li className="breadcrumb-item active"><Link to="#">Bordered Forms</Link>
                                         </li>
                                     </ol>
                                 </div>
@@ -28,10 +29,10 @@ const BorderedForm = () => {
                         <div className="content-header-right col-md-6 col-12">
                             <div className="dropdown float-md-right">
                                 <button className="btn btn-danger dropdown-toggle round btn-glow px-2" id="dropdownBreadcrumbButton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Actions</button>
-                                <div className="dropdown-menu" aria-labelledby="dropdownBreadcrumbButton"><a className="dropdown-item" href="#"><i className="la la-calendar-check-o" /> Calender</a>
-                                    <a className="dropdown-item" href="#"><i className="la la-cart-plus" /> Cart</a>
-                                    <a className="dropdown-item" href="#"><i className="la la-life-ring" /> Support</a>
-                                    <div className="dropdown-divider" /><a className="dropdown-item" href="#"><i className="la la-cog" /> Settings</a>
+                                <div className="dropdown-menu" aria-labelledby="dropdownBreadcrumbButton"><Link className="dropdown-item" to="#"><i className="la la-calendar-check-o" /> Calender</Link>
+                                    <Link className="dropdown-item" to="#"><i className="la la-cart-plus" /> Cart</Link>
+                                    <Link className="dropdown-item" to="#"><i className="la la-life-ring" /> Support</Link>
+                                    <div className="dropdown-divider" /><Link className="dropdown-item" to="#"><i className="la la-cog" /> Settings</Link>
                                 </div>
                             </div>
                         </div>
@@ -44,13 +45,13 @@ const BorderedForm = () => {
                                     <div className="card">
                                         <div className="card-header">
                                             <h4 className="card-title" id="bordered-layout-basic-form">Project Info</h4>
-                                            <a className="heading-elements-toggle"><i className="la la-ellipsis-v font-medium-3" /></a>
+                                            <Link className="heading-elements-toggle"><i className="la la-ellipsis-v font-medium-3" /></Link>
                                             <div className="heading-elements">
                                                 <ul className="list-inline mb-0">
-                                                    <li><a data-action="collapse"><i className="ft-minus" /></a></li>
-                                                    <li><a data-action="reload"><i className="ft-rotate-cw" /></a></li>
-                                                    <li><a data-action="expand"><i className="ft-maximize" /></a></li>
-                                                    <li><a data-action="close"><i className="ft-x" /></a></li>
+                                                    <li><Link data-action="collapse"><i className="ft-minus" /></Link></li>
+                                                    <li><Link data-action="reload"><i className="ft-rotate-cw" /></Link></li>
+                                                    <li><Link data-action="expand"><i className="ft-maximize" /></Link></li>
+                                                    <li><Link data-action="close"><i className="ft-x" /></Link></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -154,13 +155,13 @@ const BorderedForm = () => {
                                     <div className="card">
                                         <div className="card-header">
                                             <h4 className="card-title" id="bordered-layout-colored-controls">User Profile</h4>
-                                            <a className="heading-elements-toggle"><i className="la la-ellipsis-v font-medium-3" /></a>
+                                            <Link className="heading-elements-toggle"><i className="la la-ellipsis-v font-medium-3" /></Link>
                                             <div className="heading-elements">
                                                 <ul className="list-inline mb-0">
-                                                    <li><a data-action="collapse"><i className="ft-minus" /></a></li>
-                                                    <li><a data-action="reload"><i className="ft-rotate-cw" /></a></li>
-                                                    <li><a data-action="expand"><i className="ft-maximize" /></a></li>
-                                                    <li><a data-action="close"><i className="ft-x" /></a></li>
+                                                    <li><Link data-action="collapse"><i className="ft-minus" /></Link></li>
+                                                    <li><Link data-action="reload"><i className="ft-rotate-cw" /></Link></li>
+                                                    <li><Link data-action="expand"><i className="ft-maximize" /></Link></li>
+                                                    <li><Link data-action="close"><i className="ft-x" /></Link></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -261,13 +262,13 @@ const BorderedForm = () => {
                                     <div className="card">
                                         <div className="card-header">
                                             <h4 className="card-title" id="bordered-layout-icons">Timesheet</h4>
-                                            <a className="heading-elements-toggle"><i className="la la-ellipsis-v font-medium-3" /></a>
+                                            <Link className="heading-elements-toggle"><i className="la la-ellipsis-v font-medium-3" /></Link>
                                             <div className="heading-elements">
                                                 <ul className="list-inline mb-0">
-                                                    <li><a data-action="collapse"><i className="ft-minus" /></a></li>
-                                                    <li><a data-action="reload"><i className="ft-rotate-cw" /></a></li>
-                                                    <li><a data-action="expand"><i className="ft-maximize" /></a></li>
-                                                    <li><a data-action="close"><i className="ft-x" /></a></li>
+                                                    <li><Link data-action="collapse"><i className="ft-minus" /></Link></li>
+                                                    <li><Link data-action="reload"><i className="ft-rotate-cw" /></Link></li>
+                                                    <li><Link data-action="expand"><i className="ft-maximize" /></Link></li>
+                                                    <li><Link data-action="close"><i className="ft-x" /></Link></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -380,13 +381,13 @@ const BorderedForm = () => {
                                     <div className="card">
                                         <div className="card-header">
                                             <h4 className="card-title" id="bordered-layout-card-center">Event Registration</h4>
-                                            <a className="heading-elements-toggle"><i className="la la-ellipsis-v font-medium-3" /></a>
+                                            <Link className="heading-elements-toggle"><i className="la la-ellipsis-v font-medium-3" /></Link>
                                             <div className="heading-elements">
                                                 <ul className="list-inline mb-0">
-                                                    <li><a data-action="collapse"><i className="ft-minus" /></a></li>
-                                                    <li><a data-action="reload"><i className="ft-rotate-cw" /></a></li>
-                                                    <li><a data-action="expand"><i className="ft-maximize" /></a></li>
-                                                    <li><a data-action="close"><i className="ft-x" /></a></li>
+                                                    <li><Link data-action="collapse"><i className="ft-minus" /></Link></li>
+                                                    <li><Link data-action="reload"><i className="ft-rotate-cw" /></Link></li>
+                                                    <li><Link data-action="expand"><i className="ft-maximize" /></Link></li>
+                                                    <li><Link data-action="close"><i className="ft-x" /></Link></li>
                                                 </ul>
                                             </div>
                                         </div>
