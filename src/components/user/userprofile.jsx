@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const userprofile = () => {
   return (
@@ -9,41 +10,65 @@ const userprofile = () => {
           <div id="user-profile">
             <div className="row">
               <div className="col-12">
-                  <div className="form-group">
-                    <label htmlFor="exampleInputEmail1">Email address</label>
-                    <input
-                      type="email"
-                      className="form-control w-50"
-                      id="exampleInputEmail1"
-                      aria-describedby="emailHelp"
-                      placeholder="Enter email"
-                    />
-                    <small id="emailHelp" className="form-text text-muted">
-                      We'll never share your email with anyone else.
-                    </small>
+                <div className="card profile-with-cover py-3">
+                  <div className="col-lg-12" id="al">
+                    <h2>User Profile</h2>
+                    <div className="media profil-cover-details w-100">
+                      <div className="col-md-12 text-center">{/* image */}</div>
+                    </div>
+                    <div className="row mt-2">
+                      <div className="col-lg-6" id="al">
+                        <label>First Name</label>
+                        <input
+                          type="text"
+                          className="form-control"
+                          placeholder="First Name"
+                          id="mt"
+                        />
+                      </div>
+                      <div className="col-lg-6" id="al">
+                        <label>Last Name</label>
+                        <input
+                          type="text"
+                          className="form-control"
+                          placeholder="Last Name"
+                          id="mt"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="row mt-2">
+                      <div className="col-lg-6" id="al">
+                        <label>Email</label>
+                        <input
+                          type="email"
+                          className="form-control"
+                          placeholder="Email"
+                          id="mt"
+                        />
+                      </div>
+                      <div className="col-lg-6" id="al">
+                        <label>Password</label>
+                        <input
+                          type="password"
+                          className="form-control"
+                          placeholder="Password"
+                          id="mt"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="row mt-2">
+                      <div className="col">
+                        <Link to="/userupdateprofile">
+                          <button className="btn btn-primary" >
+                            Edit Profile
+                          </button>
+                        </Link>
+                      </div>
+                    </div>
                   </div>
-                  <div className="form-group">
-                    <label htmlFor="exampleInputPassword1">Password</label>
-                    <input
-                      type="password"
-                      className="form-control w-50"
-                      id="exampleInputPassword1"
-                      placeholder="Password"
-                    />
-                  </div>
-                  <div className="form-check">
-                    <input
-                      type="checkbox"
-                      className="form-check-input"
-                      id="exampleCheck1"
-                    />
-                    <label className="form-check-label" htmlFor="exampleCheck1">
-                      Check me out
-                    </label>
-                  </div>
-                  <button type="submit" className="btn btn-primary mt-2">
-                    Submit
-                  </button>
+                </div>
               </div>
             </div>
           </div>

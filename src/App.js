@@ -19,7 +19,9 @@ import BorderedForm from './pages/form layouts/BorderedForm';
 import SimpleLogin from './pages/auth/simplelogin';
 import SimpleRegister from './pages/auth/simpleregister';
 import Userprofile from './pages/user/userprofile';
-import MuiDataTable from './components/tables/MuiDataTable';
+import UserUpdateProfile from './components/user/UserUpdateProfile';
+import UserList from './components/user/UserList';
+import DataTable from './components/tables/DataTable';
 
 
 
@@ -44,7 +46,11 @@ function App() {
           <Route path='/register' element={<SimpleRegister />} />
           <Route path='/userprofile' element={<Userprofile />} />
           <Route path='/basictable' element={<Tables />} />
-          <Route path='/table' element={<MuiDataTable />} />
+          <Route path='/datatable' element={<DataTable />} />
+          <Route path='/userupdateprofile' element={<UserUpdateProfile />} />
+          <Route path='/userlist' element={<UserList />} />
+
+
 
         </Routes>
       </Router>

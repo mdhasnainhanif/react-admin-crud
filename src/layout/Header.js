@@ -111,23 +111,23 @@ const Header = () => {
           >
             <ul className="nav navbar-nav flex-row">
               <li className="nav-item mobile-menu d-md-none mr-auto">
-                <a
+                <Link
                   onClick={ahmed}
                   className="nav-link nav-menu-main menu-toggle hidden-xs"
-                  href="#"
+                  to="#"
                 >
                   <i className="ft-menu font-large-1" />
-                </a>
+                </Link>
               </li>
               <li className="nav-item mr-auto">
-                <a className="navbar-brand" href="index.html">
+                <Link className="navbar-brand" to="index.html">
                   <img
                     className="brand-logo"
                     alt="modern admin logo"
                     src="../../../app-assets/images/logo/logo.png"
                   />
                   <h3 className="brand-text">&nbsp;&nbsp;Admin Panel</h3>
-                </a>
+                </Link>
               </li>
               <li className="nav-item d-md-none">
                 <a
@@ -142,8 +142,7 @@ const Header = () => {
           </div>
           <div className="navbar-container content">
             <div className="collapse navbar-collapse" id="navbar-mobile">
-              <ul className="nav navbar-nav mr-auto float-left">
-              </ul>
+              <ul className="nav navbar-nav mr-auto float-left"></ul>
               <ul className="nav navbar-nav float-right">
                 <li
                   className={
@@ -153,13 +152,12 @@ const Header = () => {
                   }
                   onClick={profilebtnfun}
                 >
-                  <a
+                  <Link
                     className="dropdown-toggle nav-link dropdown-user-link"
-                    href="#"
+                    to="#"
                     data-toggle="dropdown"
                   >
                     <span className="mr-1">
-                      Hello,
                       <span className="user-name text-bold-700">Hasnain</span>
                     </span>
                     <span className="avatar avatar-online">
@@ -169,7 +167,7 @@ const Header = () => {
                       />
                       <i />
                     </span>
-                  </a>
+                  </Link>
                   <div
                     className={
                       Profilebtn
@@ -177,25 +175,15 @@ const Header = () => {
                         : "dropdown-menu dropdown-menu-right"
                     }
                   >
-                    <a className="dropdown-item" href="#">
+                    <Link className="dropdown-item" to="/userupdateprofile">
                       <i className="ft-user" /> Edit Profile
-                    </a>
-                    <a className="dropdown-item" href="#">
-                      <i className="ft-mail" /> My Inbox
-                    </a>
-                    <a className="dropdown-item" href="#">
-                      <i className="ft-check-square" /> Task
-                    </a>
-                    <a className="dropdown-item" href="#">
-                      <i className="ft-message-square" /> Chats
-                    </a>
+                    </Link>
                     <div className="dropdown-divider" />
-                    <a className="dropdown-item" href="#">
+                    <Link className="dropdown-item" to="/login">
                       <i className="ft-power" /> Logout
-                    </a>
+                    </Link>
                   </div>
                 </li>
-               
               </ul>
             </div>
           </div>
@@ -216,26 +204,23 @@ const Header = () => {
             <ul
               className="navigation navigation-main"
               id="main-menu-navigation"
-              data-menu="menu-navigation"
-            >
-              <li
-                
-              >
+              data-menu="menu-navigation">
+              <li>
                 <Link to={"/"}>
                   <i className="la la-home" />
-                  <span className="menu-title" >
-                    Dashboard
-                  </span>
+                  <span className="menu-title">Dashboard</span>
                 </Link>
               </li>
-              <li
-                
-              >
+              <li>
                 <Link to={"/userprofile"}>
                   <i className="la la-user" />
-                  <span className="menu-title" >
-                    Profile
-                  </span>
+                  <span className="menu-title">Profile</span>
+                </Link>
+              </li>
+              <li>
+                <Link to={"/userlist"}>
+                  <i className="la la-user" />
+                  <span className="menu-title">User</span>
                 </Link>
               </li>
             </ul>
