@@ -1,4 +1,4 @@
-import React, { forwardRef } from "react";
+import React, { forwardRef, useEffect, useState } from "react";
 import Footer from "../../layout/Footer";
 import Header from "../../layout/Header";
 import MaterialTable from "material-table";
@@ -17,6 +17,10 @@ import Remove from "@material-ui/icons/Remove";
 import SaveAlt from "@material-ui/icons/SaveAlt";
 import Search from "@material-ui/icons/Search";
 import ViewColumn from "@material-ui/icons/ViewColumn";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+import Swal from "sweetalert2";
+import axios from "axios";
 
 const UserList = () => {
   const tableIcons = {
@@ -46,6 +50,44 @@ const UserList = () => {
     )),
     ViewColumn: forwardRef((props, ref) => <ViewColumn {...props} ref={ref} />),
   };
+
+  // modal
+
+  const [lgShow, setLgShow] = useState(false);
+
+  const [fname, setFname] = useState("");
+  const [lname, setLname] = useState("");
+  const [email, setEmail] = useState("");
+  const [pass, setPass] = useState("");
+  const [apiData, setApiData] = useState([])
+
+  const submit = () => {
+    axios.post("https://63f493a23f99f5855db2a1dd.mockapi.io/crud", {
+      e_fname: fname,
+      e_lname: lname,
+      e_email: email,
+      e_pass: pass,
+    });
+
+    Swal.fire({
+      icon: "success",
+      title: "Great",
+      text: "Add Data Successfully",
+    });
+  };
+
+  const getData=()=>{
+    axios.get("https://63f493a23f99f5855db2a1dd.mockapi.io/crud")
+    .then((response)=>{
+      setApiData(response?.data)
+    })
+  
+  }
+
+  useEffect(()=>{
+    getData()
+  },[])
+ 
   return (
     <>
       <Header />
@@ -57,29 +99,96 @@ const UserList = () => {
                 <div className="col-12">
                   <div className=" profile-with-cover py-3">
                     <div className="col-lg-12" id="al">
+                      {/* modal start */}
+                      <Button className="mb-1" onClick={() => setLgShow(true)}>
+                        Add User
+                      </Button>
+                      <Modal
+                        size="lg"
+                        show={lgShow}
+                        onHide={() => setLgShow(false)}
+                        aria-labelledby="example-modal-sizes-title-lg"
+                      >
+                        <Modal.Header>
+                          <Modal.Title id="example-modal-sizes-title-lg">
+                            Large Modal
+                          </Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>
+                          <div className="row mt-2">
+                            <div className="col-lg-6" id="al">
+                              <label>First Name</label>
+                              <input
+                                onChange={(e) => setFname(e.target.value)}
+                                type="text"
+                                className="form-control"
+                                placeholder="First Name"
+                                id="mt"
+                              />
+                            </div>
+                            <div className="col-lg-6" id="al">
+                              <label>Last Name</label>
+                              <input
+                                onChange={(e) => setLname(e.target.value)}
+                                type="text"
+                                className="form-control"
+                                placeholder="Last Name"
+                                id="mt"
+                              />
+                            </div>
+                          </div>
+                          <div className="row mt-2">
+                            <div className="col-lg-6" id="al">
+                              <label>Email</label>
+                              <input
+                                onChange={(e) => setEmail(e.target.value)}
+                                type="Email"
+                                className="form-control"
+                                placeholder="Email"
+                                id="mt"
+                              />
+                            </div>
+                            <div className="col-lg-6" id="al">
+                              <label>Password</label>
+                              <input
+                                onChange={(e) => setPass(e.target.value)}
+                                type="password"
+                                className="form-control"
+                                placeholder="Password"
+                                id="mt"
+                              />
+                            </div>
+                          </div>
+
+                          <hr />
+                          <button
+                            className="btn btn-danger"
+                            onClick={() => setLgShow(false)}
+                          >
+                            Close
+                          </button>
+                          <button
+                            className="btn btn-primary ml-1"
+                            onClick={submit}
+                          >
+                            Submit
+                          </button>
+                        </Modal.Body>
+                      </Modal>
+                      {/* modal end */}
                       <MaterialTable
                         title="User List"
                         columns={[
-                          { title: "First Name", field: "fname" },
-                          { title: "Last Name", field: "lname" },
-                          { title: "Email", field: "email" },                        
+                          { title: "First Name", field: "e_fname" },
+                          { title: "Last Name", field: "e_lname" },
+                          { title: "Email", field: "e_email" },
+                          { title: "Password", field: "e_pass" },
                         ]}
-                        data={[
-                          {
-                            fname: "Mehmet",
-                            lname: "Khalil",
-                            email: "hasnain@gmail.com",
-                          },
-                          {
-                            fname: "Zerya",
-                            lname: "Betül",
-                            email: "khalil@gmail.com",
-                          },
-                        ]}
+                        data={apiData}
                         actions={[
                           {
-                            icon: "save",
-                            tooltip: "Save User",
+                            icon: "edit",
+                            tooltip: "Edit User",
                             // onClick: (event, rowData) =>
                             //   alert("You saved " + rowData.name),
                           },
